@@ -75,7 +75,7 @@ public class PainelExemplos extends javax.swing.JPanel implements Themeable{
     public PainelExemplos() {
         
         initComponents();
-        
+        labelVersao.setText("v"+PortugolStudio.getInstancia().getVersao());
         imagePanel = new ImagePanel();
         imagePane.add(imagePanel);
         imagePortugol = new ImagePanel();
@@ -103,6 +103,7 @@ public class PainelExemplos extends javax.swing.JPanel implements Themeable{
     }    
     @Override
     public void configurarCores() {
+        labelVersao.setForeground(ColorController.COR_LETRA);
         arvoreExemplos.setBackground(ColorController.FUNDO_CLARO);
         imagePane.setBackground(ColorController.FUNDO_ESCURO);
         description.setForeground(ColorController.COR_LETRA);
@@ -408,6 +409,8 @@ public class PainelExemplos extends javax.swing.JPanel implements Themeable{
         painelRecentesPrincipal = new javax.swing.JPanel();
         areaLogo = new javax.swing.JPanel();
         painelRecentes = new javax.swing.JPanel();
+        painelVersao = new javax.swing.JPanel();
+        labelVersao = new javax.swing.JLabel();
         textRecentes = new javax.swing.JLabel();
         scrollRecentes = new javax.swing.JScrollPane();
         areaRecentes = new javax.swing.JPanel();
@@ -431,12 +434,18 @@ public class PainelExemplos extends javax.swing.JPanel implements Themeable{
         painelRecentes.setOpaque(false);
         painelRecentes.setLayout(new java.awt.BorderLayout());
 
+        painelVersao.setOpaque(false);
+        painelVersao.setLayout(new java.awt.BorderLayout());
+        painelVersao.add(labelVersao, java.awt.BorderLayout.EAST);
+
+        painelRecentes.add(painelVersao, java.awt.BorderLayout.PAGE_END);
+
         textRecentes.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         textRecentes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textRecentes.setText("Arquivos Recentes");
         textRecentes.setBorder(javax.swing.BorderFactory.createEmptyBorder(25, 0, 0, 0));
         textRecentes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        painelRecentes.add(textRecentes, java.awt.BorderLayout.CENTER);
+        painelRecentes.add(textRecentes, java.awt.BorderLayout.NORTH);
 
         scrollRecentes.setBorder(null);
 
@@ -444,7 +453,7 @@ public class PainelExemplos extends javax.swing.JPanel implements Themeable{
         areaRecentes.setOpaque(false);
         scrollRecentes.setViewportView(areaRecentes);
 
-        painelRecentes.add(scrollRecentes, java.awt.BorderLayout.SOUTH);
+        painelRecentes.add(scrollRecentes, java.awt.BorderLayout.CENTER);
 
         painelRecentesPrincipal.add(painelRecentes, java.awt.BorderLayout.SOUTH);
 
@@ -547,10 +556,12 @@ public class PainelExemplos extends javax.swing.JPanel implements Themeable{
     private javax.swing.JPanel imagePane;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel labelTitulo;
+    private javax.swing.JLabel labelVersao;
     private javax.swing.JPanel painelDireita;
     private javax.swing.JPanel painelEsquerda;
     private javax.swing.JPanel painelRecentes;
     private javax.swing.JPanel painelRecentesPrincipal;
+    private javax.swing.JPanel painelVersao;
     private javax.swing.JScrollPane scrollArvoreExemplos;
     private javax.swing.JScrollPane scrollRecentes;
     private javax.swing.JLabel textRecentes;

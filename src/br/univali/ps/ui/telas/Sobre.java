@@ -42,12 +42,14 @@ public class Sobre extends javax.swing.JPanel implements Themeable
         FabricaDicasInterface.criarTooltip(labellicensa, "Veja as Licensas do Software");
         labellicensa.setIcon(IconFactory.createIcon(IconFactory.CAMINHO_ICONES_GRANDES, "license.png"));
         configurarCores();
+        versaoLabel.setText("v"+PortugolStudio.getInstancia().getVersao());
     }
     
     @Override
     public void configurarCores(){
         painelConteudo.setBackground(ColorController.FUNDO_CLARO);
         paineInferior.setBackground(ColorController.FUNDO_ESCURO);
+        versaoLabel.setForeground(ColorController.COR_LETRA);
         jPanel1.setBackground(ColorController.FUNDO_ESCURO);
         jLabel1.setBackground(ColorController.COR_PRINCIPAL);
         jLabel1.setText(carregarHTML("/br/univali/ps/ui/telas/"+Configuracoes.getInstancia().getTemaPortugol()+"/membros.html"));
@@ -109,6 +111,7 @@ public class Sobre extends javax.swing.JPanel implements Themeable
         jPanel1 = new javax.swing.JPanel();
         logo1 = new br.univali.ps.ui.imagens.Logo();
         jLabel2 = new javax.swing.JLabel();
+        versaoLabel = new javax.swing.JLabel();
         paineInferior = new javax.swing.JPanel();
         rotuloGithub = new javax.swing.JLabel();
         rotuloOsi = new javax.swing.JLabel();
@@ -144,6 +147,11 @@ public class Sobre extends javax.swing.JPanel implements Themeable
         jPanel1.add(jLabel2);
 
         painelConteudo.add(jPanel1, java.awt.BorderLayout.WEST);
+
+        versaoLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        versaoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        versaoLabel.setText("jLabel3");
+        painelConteudo.add(versaoLabel, java.awt.BorderLayout.PAGE_END);
 
         mainpanel.add(painelConteudo, java.awt.BorderLayout.CENTER);
 
@@ -224,5 +232,6 @@ public class Sobre extends javax.swing.JPanel implements Themeable
     private javax.swing.JLabel rotuloGithub;
     private javax.swing.JLabel rotuloOsi;
     private javax.swing.JLabel rotuloUnivali;
+    private javax.swing.JLabel versaoLabel;
     // End of variables declaration//GEN-END:variables
 }
