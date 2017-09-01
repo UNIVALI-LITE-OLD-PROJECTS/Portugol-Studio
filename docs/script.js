@@ -48,13 +48,13 @@ function testOS () {
   }
 
   var path = 'img/'
-  var link = 'https://github.com/UNIVALI-LITE/Portugol-Studio/releases/download/v2.6.1/portugol-studio.2.6.1.linux.x64.zip'
+  var link = 'https://github.com/UNIVALI-LITE/Portugol-Studio/releases/download/v2.6.2/portugol-studio-2.6.2-linux-x64.zip'
   if (os.indexOf('Windows') !== -1) {
     path += 'win'
-    link = 'https://github.com/UNIVALI-LITE/Portugol-Studio/releases/download/v2.6.1/portugol-studio.2.6.1.windows.exe'
+    link = 'https://github.com/UNIVALI-LITE/Portugol-Studio/releases/download/v2.6.2/portugol-studio-2.6.2-windows.exe'
   } else if (os === 'Mac OS X') {
     path += 'mac'
-    link = 'https://github.com/UNIVALI-LITE/Portugol-Studio/releases/download/v2.6.1/portugol-studio.2.6.1.osx.zip'
+    link = 'https://github.com/UNIVALI-LITE/Portugol-Studio/releases/download/v2.6.2/portugol-studio-2.6.2-osx.app.zip'
   } else {
     path += 'lin'
     $('.outras').append('(x32)')
