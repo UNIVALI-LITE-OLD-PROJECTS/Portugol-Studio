@@ -103,7 +103,7 @@ public class PainelExemplos extends javax.swing.JPanel implements Themeable{
     }    
     @Override
     public void configurarCores() {
-        labelVersao.setForeground(ColorController.COR_LETRA);
+        labelVersao.setForeground(ColorController.COR_LETRA_TITULO);
         arvoreExemplos.setBackground(ColorController.FUNDO_CLARO);
         imagePane.setBackground(ColorController.FUNDO_ESCURO);
         description.setForeground(ColorController.COR_LETRA);
